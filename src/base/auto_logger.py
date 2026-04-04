@@ -86,3 +86,4 @@ def _get_class_that_defined_method(method):
                       method.__qualname__.split('.<locals>', 1)[0].rsplit('.', 1)[0])
         if isinstance(cls, type):
             return cls
+    return None

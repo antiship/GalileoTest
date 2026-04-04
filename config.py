@@ -36,4 +36,3 @@ class BaseConfig:
     USERNAME = parser.get("DATA", "username")
     PASSWORD = parser.get("DATA", "password")
     CLIENT_SECRET = parser.get("DATA", "client_secret")
-
