@@ -7,10 +7,12 @@ ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 ENV DBUS_SESSION_BUS_ADDRESS=/dev/null
 
-RUN apt-get update          \
-    && apt-get install -y   \
-    apt-utils bash vim curl \
-    git gcc libxslt-dev
+RUN apt-get update            \
+    && apt-get install -y     \
+    apt-utils bash vim curl   \
+    git gcc openssh git gcc   \
+    build-base libxslt-dev    \
+    --no-cache ca-certificates
 
 RUN apt-get update                  \
     && apt-get install -y           \
@@ -40,6 +42,6 @@ RUN pwd && ls -la
 
 VOLUME ["project/src/allure_/allure_results"]
 
-WORKDIR project
+WORKDIR "./project"
 
-CMD tail -f /dev/null
+CMD ["tail", "-f", "/dev/null"]
